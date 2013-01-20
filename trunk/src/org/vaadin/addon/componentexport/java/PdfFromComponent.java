@@ -43,6 +43,7 @@ public class PdfFromComponent {
 	public void export(Component c) {
 		
 		List<Component> list = new ArrayList<Component>();
+		list.add(c);
 		this.export(list);
 		
 	}
@@ -100,7 +101,7 @@ public class PdfFromComponent {
 
 		TemporaryFileDownloadResource resource;
 		try {
-			resource = new TemporaryFileDownloadResource(app, "table.pdf",
+			resource = new TemporaryFileDownloadResource(app, "export.pdf",
 					"aplication/pdf", this.tempFile);
 
 			app.getMainWindow().open(resource, target);
